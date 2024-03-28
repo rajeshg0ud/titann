@@ -17,9 +17,9 @@ function Cart() {
   //const {name, listPrice, price, imageUrl}= attributes;
 
   cartItems.map((cartItem)=>{
-    numOfItem+= cartItem.quantity;
-    totalPrice+=cartItem.attributes.listPrice.value*cartItem.quantity;
-    discountedPrice+=cartItem.attributes.price.value*cartItem.quantity;
+    numOfItem+= cartItem?.quantity;
+    totalPrice+=cartItem?.attributes?.listPrice?.value*cartItem?.quantity;
+    discountedPrice+=cartItem?.attributes?.price?.value*cartItem?.quantity;
   })
 
   const handleToken = (token) => {
@@ -33,9 +33,12 @@ function Cart() {
   }
 
   useEffect(()=>{
+
+    window.scrollTo(0, 0);
     
     return ()=> setIsOrderPlaced(false);
   },[])
+
 
   if(isOrderPlaced) return(<div className='self-center flex justify-center m-[6px] mt-24 text-3xl font-semibold'>Order Placed</div>)
 
@@ -48,32 +51,32 @@ function Cart() {
   </div>)
 
   return(
-    <div className=' flex flex-col ml-16 mt-24'>
+    <div className=' flex flex-col m-2 sm:ml-16 mt-24'>
  
-     <p className='m-[6px] text-3xl'>CART</p> 
+     <p className='m-[6px] text-xl sm:text-3xl'>CART</p> 
 
-     <div className='flex '>
+     <div className='flex flex-col sm:flex-row'>
      <a className=' w-full'>
      {
          cartItems?.map((cartItem, index)=>(
              <div className='flex p-4 m-[6px] border' key={index}>
          <div>
-             <img src={cartItem.attributes.imageUrl.value} className=' w-44 mr-5' />
+             <img src={cartItem?.attributes?.imageUrl?.value} className=' w-44 mt-[6px] mr-5' />
          </div>
-         <div className=' text-md w-[580px]'>
-             <p className=' text-zinc-800'>{cartItem.attributes.name.value}</p>
+         <div className=' text-md w-[580px] px-2 sm:px-0'>
+             <p className=' text-zinc-800 '>{cartItem?.attributes?.name?.value}</p>
              {
-             cartItem.attributes.price.value === cartItem.attributes.listPrice.value ? 
-             <p  className='font-semibold text-lg'>{" ₹ "+cartItem.attributes.listPrice.value}</p> :
+             cartItem.attributes.price.value === cartItem?.attributes?.listPrice?.value ? 
+             <p  className='font-semibold text-lg'>{" ₹ "+cartItem?.attributes?.listPrice?.value}</p> :
              ( 
-             <p className='font-semibold  text-lg'>{" ₹" + cartItem.attributes.price.value + "  "} 
-             <span className="text-gray-500 line-through  text-sm"> {" ₹" + cartItem.attributes.listPrice.value}</span>
-             <span className=' text-red-600 text-sm'>{" "+ Math.ceil((cartItem.attributes.listPrice.value - cartItem.attributes.price.value) / cartItem.attributes.listPrice.value * 100)}% Off</span></p>)
+             <p className='font-semibold  text-lg'>{" ₹" + cartItem?.attributes?.price?.value + "  "} 
+             <span className="text-gray-500 line-through  text-sm"> {" ₹" + cartItem?.attributes?.listPrice?.value}</span>
+             <span className=' text-red-600 text-sm'>{" "+ Math.ceil((cartItem?.attributes?.listPrice?.value - cartItem?.attributes?.price?.value) / cartItem?.attributes?.listPrice?.value * 100)}% Off</span></p>)
              }
              <p className='py-2 text-xs font-semibold text-zinc-800'> 7 Days Returnable</p>
              <div className=' pt-3 font-semibold'>
              <button className='border px-2' onClick={()=> dispatch(removeFromCart(cartItem))}>-</button>
-             <button className='border px-2'>{cartItem.quantity}</button>
+             <button className='border px-2'>{cartItem?.quantity}</button>
              <button className='border px-2' onClick={()=> dispatch(increaseQuantity(cartItem))}>+</button>
              </div>
          </div> 
@@ -82,7 +85,7 @@ function Cart() {
          ))}
      </a>
      
-     <div className=' w-3/5 mx-4 my-[6px] mr-12 text-sm  font-semibold'> 
+     <div className=' w-5/5 sm:w-3/5 mx-[6px] sm:mx-4 my-[6px] sm:mr-12 text-sm  font-semibold'> 
      <div className='border p-4'>
         
         <div className=' flex justify-between mt-3'>
@@ -101,11 +104,11 @@ function Cart() {
          </div>
          <hr/>
          <div className=' flex justify-between my-3'>
-         <p className=' text-lg'>Grand Total</p> <p> ₹ {discountedPrice}</p>
+         <p className=' text-lg mb-9 sm:mb-0'>Grand Total</p> <p> ₹ {discountedPrice}</p>
          </div>
          <StripeCheckout stripeKey='pk_test_51Oz07gSJmBCN1pgdEudRziJOzsPZkscd01sH4hUNfay0Y0jA3vds2m5b0mfCu7hKeussll2d11ZDjkm4e79t04ZR00RfMACA9Q'
           amount={discountedPrice*100} name="Titan Clone Store" currency='INR' token={handleToken}>
-         <button className=' bg-yellow-500 border w-full py-4 hover:brightness-95' >PLACE ORDER</button>
+         <button className=' bg-yellow-500 border w-full py-4 hover:brightness-95 fixed bottom-0 left-0 z-50 sm:relative' >PLACE ORDER</button>
          </StripeCheckout>
       </div>
      </div>

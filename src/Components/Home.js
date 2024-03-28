@@ -1,6 +1,6 @@
 import React from 'react'
 import GetProducts from '../utills/GetProducts';
-import { link1, link11, link2, link22, link3, link33, link4 } from '../utills/assets';
+import { link01, link02, link11, link2, link22, link3, link33, link4 } from '../utills/assets';
 import { useEffect, useState } from 'react';
 
 function Home() {
@@ -39,9 +39,9 @@ function Home() {
     
     <div className='bg-white shadow-md mt-5 pt-7'>
       <p className='font-semibold ml-10'>Premium Watches</p>
-      <GetProducts link={link4} />
+      <GetProducts link={link01} />
       <img className='flex flex-wrap justify-center shadow-md mt-5' src='https://www.titan.co.in/on/demandware.static/-/Library-Sites-TitanSharedLibrary/default/dw49a50422/images/Category%20Banners/Raga%20360x50.jpg' />
-      <GetProducts link={link33} />
+      <GetProducts link={link02} />
       <img className='flex flex-wrap justify-center shadow-md mt-5' src='https://www.titan.co.in/on/demandware.static/-/Library-Sites-TitanSharedLibrary/default/dw310b8952/images/axioplp.jpg' />
     </div>
     </>

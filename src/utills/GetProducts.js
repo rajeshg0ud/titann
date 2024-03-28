@@ -26,7 +26,7 @@ function GetProducts({ link }) {
             {products && products.campaignResponses?.map((pro, i) => (
                 pro.payload && pro.payload.products?.map((item, j) => (
                     <Link to='/Product' key={item.id ? item.id : `product_${j}`}>
-                        <div className='m-5 mx-[10px] sm:mx-5 w-[135px] sm:w-[207px] hover:shadow-lg cursor-pointer justify-self-start mt-7' onClick={() => dispatch(addProduct(item))}>
+                        <div className='m-5 mx-[10px] sm:mx-5 w-[140px] sm:w-[207px] hover:shadow-lg cursor-pointer justify-self-start mt-7' onClick={() => dispatch(addProduct(item))}>
                             <img src={item?.attributes?.imageUrl?.value} className=' w-40 sm:w-[207px] rounded-sm object-cover' alt={item?.attributes?.name?.value} />
                             <div className=' p-3'>
                                 <p className=' font-semibold overflow-hidden line-clamp-2 mb-2 text-sm sm:text-md'>{item?.attributes?.name?.value}</p>

@@ -17,10 +17,10 @@ function Header() {
   
   return (
     <div className=' fixed top-0 w-full z-50'>
-      <header className=' flex justify-between pt-2 sm:p-3 bg-white shadow-lg'>
+      <header className=' flex justify-between pt-2 sm:p-[10px] sm:pb-0 bg-white shadow-lg'>
         <Link to='/' className='p-3'><img src={logo} className=' w-20 sm:w-[124px] ml-7 cursor-pointer' alt="logo" /></Link>
-        <div className={` hidden border rounded-sm w-2/6 px-2 my-[5.5px] sm:flex ${isFocused ? "bg-white" : "bg-gray-100"}`}>
-          <img src='https://www.titan.co.in/on/demandware.static/Sites-Titan-Site/-/default/dwc65631a9/images/search.svg' alt='search' className='p-2' />
+        <div className={` hidden border rounded-sm w-2/6 px-2 h-10 my-[5.5px] sm:flex ${isFocused ? "bg-white" : "bg-gray-100"}`}>
+          <img src='https://www.titan.co.in/on/demandware.static/Sites-Titan-Site/-/default/dwc65631a9/images/search.svg' alt='search' className='p-2 px-1' />
           <input type='text' placeholder='Search for Products...' className={` outline-none w-full ${isFocused ? "bg-white" : "bg-gray-100"}`} onClick={() => setIsFocused(true)} onBlur={() => setIsFocused(false)} />
         </div>
         <div className=' flex sm:mr-10'>

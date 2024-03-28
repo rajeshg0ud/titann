@@ -26,13 +26,6 @@ const Footer = () => {
           </ul>
         </div>
         <div className="footer-column">
-          <h3 className='text-xs m-1 text-black'>Legal</h3>
-          <ul>
-            <li className=' text-xs m-3'>Terms & Conditions</li>
-            <li className=' text-xs m-3'>Privacy Policy</li>
-          </ul>
-        </div>
-        <div className="footer-column">
           <h3 className='text-xs m-1 text-black'>Connect with us</h3>
           <div className="social-icons">
             <FontAwesomeIcon className=' m-1 size-4' icon={faFacebook} />
@@ -42,7 +35,7 @@ const Footer = () => {
         </div>
       </div>
       <div className=" text-center m-5 text-xs sm:text-md">
-        <p>&copy; 2024 Your Food App. All rights reserved.</p>
+        <p>&copy; Titan App. All rights reserved.</p>
       </div>
     </div>
   );

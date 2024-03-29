@@ -20,14 +20,18 @@ function Product() {
 
   console.log(idd);
   return (
-    <div className='  mt-24 sm:pl-44 flex flex-col sm:flex-row '>
-      <div className='flex flex-row h-[300px] sm:flex-col overflow-x-scroll overflow-y-scroll sm:h-[600px] p-4'>
-        {[...Array(6).keys()].map(i => {
-          return <img key={i*Math.random()} src={imageUrl?.value.replace(/.(?=\.jpg)/,i+1)} className=' w-full sm:w-[500px] object-cover' />;
-          })}
+    <div className='  mt-24 sm:pl-10 md:pl-44 flex flex-col sm:flex-row '>
+      <div className='flex flex-row h-[300px] md:flex-col overflow-x-scroll overflow-y-scroll md:h-[500px] p-4'>
+      {[...Array(6).keys()].map(i => {
+      return (
+        <img key={i * Math.random()} src={imageUrl?.value && imageUrl.value.replace(/.(?=\.jpg)/, i + 1)} 
+        className='w-full md:w-[500px] object-cover' />
+      ); 
+  })}
+
       </div>
       <div className=' sm:px-10'>
-      <p className=' font-semibold text-lg sm:text-xl p-1 px-5 w-5/5 sm:w-4/5'>{name?.value}</p>
+      <p className=' font-semibold text-lg md:text-xl p-1 px-5 w-5/5 md:w-4/5'>{name?.value}</p>
       <p className='  text-gray-500 mb-1 sm:mb-2 p-1 px-5'>{dimensions?.Gender[0]=="ladies"? "Women's":"Men's"} Watch</p>
       <div className=' flex text-lg p-1 pl-5'>
       {

@@ -21,7 +21,7 @@ function Product() {
   console.log(idd);
   return (
     <div className='  mt-24 sm:pl-44 flex flex-col sm:flex-row '>
-      <div className='flex flex-row h-[300px] sm:flex-col overflow-x-scroll sm:overflow-y-scroll sm:h-[600px] p-4'>
+      <div className='flex flex-row h-[300px] sm:flex-col overflow-x-scroll overflow-y-scroll sm:h-[600px] p-4'>
         {[...Array(6).keys()].map(i => {
           return <img key={i*Math.random()} src={imageUrl?.value.replace(/.(?=\.jpg)/,i+1)} className=' w-full sm:w-[500px] object-cover' />;
           })}

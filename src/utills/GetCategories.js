@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+{/**import React, { useEffect, useState } from 'react';
 
 function GetCategories() {
   const [category, setCategory]= useState("");
@@ -34,4 +34,4 @@ function GetCategories() {
   
 }
 
-export default GetCategories
+export default GetCategories */}

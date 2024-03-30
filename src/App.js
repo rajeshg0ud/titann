@@ -1,4 +1,4 @@
-import './index.css';
+{/**import './index.css';
 import Header from './Components/Header';
 import GetCategories from './utills/GetCategories';
 import GetProducts from './utills/GetProducts';
@@ -28,4 +28,4 @@ function App() {
   );
 }
 
-export default App;
+export default App; */}
